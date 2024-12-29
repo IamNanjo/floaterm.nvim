@@ -48,8 +48,9 @@ local function open_floating_window(config)
         vim.cmd.terminal()
     end
 
-    vim.keymap.set({ "t", "i" }, "<C-[>", "<c-\\><c-n>", { noremap = true, silent = true, buffer = state.buf })
-    vim.keymap.set({ "t", "i" }, "<C-[><C-[>", M.floaterminal, { noremap = true, silent = true, buffer = state.buf })
+    vim.keymap.set({ "t" }, "<C-[>", "<c-\\><c-n>", { noremap = true, silent = true, buffer = state.buf })
+    vim.keymap.set({ "t" }, "<C-[><C-[>", M.floaterminal, { noremap = true, silent = true, buffer = state.buf })
+    vim.keymap.set({ "n" }, "<C-[>", M.floaterminal, { noremap = true, silent = true, buffer = state.buf })
 
     vim.api.nvim_command("startinsert")
 
